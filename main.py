@@ -265,33 +265,28 @@ def send_text(message):
         bot.send_message(message.chat.id, "This command having error pls wait for ficing the glitch by admin")
         bot.send_message(OWNER_ID, "Your bot got an error fix it fast!\n Error on command: "+message.text)
         return
-
-import re
-
-def is_valid_upi_address(message):
-    upi_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-  try:
+def trx_address(message):
+   try:
     if message.text == "🚫 Cancel":
         return menu(message.chat.id)
-    if is_valid_upi_address(message):
+    if len(message.text) == 34:
         user_id = message.chat.id
         user = str(user_id)
         data = json.load(open('users.json', 'r'))
         data['wallet'][user] = message.text
 
-        bot.send_message(message.chat.id, "*💹Your UPI Address set to " +
+        bot.send_message(message.chat.id, "*💹Your Trx wallet set to " +
                          data['wallet'][user]+"*", parse_mode="Markdown")
         json.dump(data, open('users.json', 'w'))
         return menu(message.chat.id)
     else:
         bot.send_message(
-            message.chat.id, "*⚠️ It's Not a Valid UPI Address!*", parse_mode="Markdown")
+            message.chat.id, "*⚠️ It's Not a Valid Trx Address!*", parse_mode="Markdown")
         return menu(message.chat.id)
    except:
         bot.send_message(message.chat.id, "This command having error pls wait for ficing the glitch by admin")
         bot.send_message(OWNER_ID, "Your bot got an error fix it fast!\n Error on command: "+message.text)
         return
-
 def amo_with(message):
    try:
     user_id = message.chat.id
