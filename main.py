@@ -3,14 +3,14 @@ import json
 import telebot
 
 ##TOKEN DETAILS
-TOKEN = "TRON"
+TOKEN = "INR"
 
-BOT_TOKEN = "7095533658:AAEe2IR5p-OWCp341UgjoYK2HsvTP0NlQc8"
-PAYMENT_CHANNEL = "@payment_auto" #add payment channel here including the '@' sign
-OWNER_ID = 5433539419 #write owner's user id here.. get it from @MissRose_Bot by /id
-CHANNELS = ["@Pro_Tech_Earner", "@Upi_verified_Bots"] #add channels to be checked here in the format - ["Channel 1", "Channel 2"] 
+BOT_TOKEN = "7114321955:AAHkdHulB15FlI_K7I3R-FoAroKaGKVTFBw"
+PAYMENT_CHANNEL = "@earnhere_likepro" #add payment channel here including the '@' sign
+OWNER_ID = 7099784951 #write owner's user id here.. get it from @MissRose_Bot by /id
+CHANNELS = ["@earnhere_likepro"] #add channels to be checked here in the format - ["Channel 1", "Channel 2"] 
               #you can add as many channels here and also add the '@' sign before channel username
-Daily_bonus = 100 #Put daily bonus amount here!
+Daily_bonus = 1000 #Put daily bonus amount here!
 Mini_Withdraw = 10  #remove 0 and add the minimum withdraw u want to set
 Per_Refer = 1000 #add per refer bonus here
 
@@ -98,7 +98,7 @@ def start(message):
         markups = telebot.types.InlineKeyboardMarkup()
         markups.add(telebot.types.InlineKeyboardButton(
             text='🤼‍♂️ Joined', callback_data='check'))
-        msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n➡️ @ Fill your channels at line: 101 and 157*"
+        msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n➡️ @earnhere_likepro*"
         bot.send_message(user, msg_start,
                          parse_mode="Markdown", reply_markup=markups)
    except:
@@ -154,7 +154,7 @@ def query_handler(call):
             markup = telebot.types.InlineKeyboardMarkup()
             markup.add(telebot.types.InlineKeyboardButton(
                 text='🤼‍♂️ Joined', callback_data='check'))
-            msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n➡️ @ Fill your channels at line: 101 and 157*"
+            msg_start = "*🍔 To Use This Bot You Need To Join This Channel - \n➡️ @earnhere_likepro*"
             bot.send_message(call.message.chat.id, msg_start,
                              parse_mode="Markdown", reply_markup=markup)
    except:
